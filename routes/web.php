@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Banner\BannerController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Projects\ProjectsController;
@@ -25,9 +26,14 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('view', [DashboardController::class, 'viewDashboard'])->name('admin.view.dashboard');
     });
 
+    Route::group(['prefix' => 'home-banner'], function(){
+        Route::get('all-banners', [BannerController::class, 'viewBanners'])->name('admin.view.banners');
+        Route::match(['get', 'post'], 'add-new-banner', [BannerController::class, 'addNewBanner'])->name('admin.add.new.banner');
+    });
+
     Route::group(['prefix' => 'projects'], function(){
         Route::get('all-ongoing', [ProjectsController::class, 'allOngoingProjects'])->name('admin.get.ongoing.projects');
-        Route::get('add-new', [ProjectsController::class, 'addNewProjects'])->name('admin.add.new.projects');
+        Route::match(['get', 'post'], 'add-new-project', [ProjectsController::class, 'addNewProjects'])->name('admin.add.new.projects');
     });
 
     // Route::group(['prefix' => 'blog'], function(){

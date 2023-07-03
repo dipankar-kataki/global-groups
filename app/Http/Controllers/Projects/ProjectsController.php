@@ -11,7 +11,11 @@ class ProjectsController extends Controller
         return view('content.projects.ongoing.all-ongoing');
     }
 
-    public function addNewProjects(){
-        return view('content.projects.ongoing.create-project');
+    public function addNewProjects(Request $request){
+        if($request->isMethod('get')){
+            return view('content.projects.ongoing.create-project');
+        }else{
+
+        }
     }
 }

@@ -22,11 +22,29 @@
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
-        <li class="menu-item {{ Request::segment(1) === 'banner' ? 'active' : '' }} ">
-            <a href="{{route('admin.view.dashboard')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-image"></i>
-                <div data-i18n="Analytics">Home Banner</div>
+        <li class="menu-item {{ Request::segment(1) === 'home-banner' ? 'active open' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-image""></i>
+                <div data-i18n="Layouts">Home Banner</div>
             </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item {{ Request::segment(2) === 'all-banners' ? 'active' : '' }}">
+                    <a href="{{route('admin.view.banners')}}" class="menu-link">
+                        <div data-i18n="Without menu">All Banners</div>
+                    </a>
+                </li>
+                <li class="menu-item {{ Request::segment(2) === 'add-new-banner' ? 'active' : '' }}">
+                    <a href="{{route('admin.add.new.banner')}}" class="menu-link">
+                        <div data-i18n="Without menu">Add New Banner</div>
+                    </a>
+                </li>
+                {{-- <li class="menu-item {{Request::segment(2) === 'add-new-blog-page' ? 'active' : ''}}">
+                    <a href="{{route('admin.create.new.blog')}}" class="menu-link">
+                        <div data-i18n="Without menu">Completed Projects</div>
+                    </a>
+                </li> --}}
+            </ul>
         </li>
 
         <li class="menu-item {{ Request::segment(1) === 'projects' ? 'active open' : '' }}">
@@ -41,7 +59,7 @@
                         <div data-i18n="Without menu">Ongoing Projects</div>
                     </a>
                 </li>
-                <li class="menu-item {{ Request::segment(2) === 'add-new' ? 'active' : '' }}">
+                <li class="menu-item {{ Request::segment(2) === 'add-new-project' ? 'active' : '' }}">
                     <a href="{{route('admin.add.new.projects')}}" class="menu-link">
                         <div data-i18n="Without menu">Add New Projects</div>
                     </a>

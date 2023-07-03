@@ -23,6 +23,26 @@
             </a>
         </li>
 
+        <li class="menu-item {{ Request::segment(1) === 'projects' ? 'active open' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-buildings"></i>
+                <div data-i18n="Layouts">Projects</div>
+            </a>
+
+            {{-- <ul class="menu-sub">
+                <li class="menu-item {{ Request::segment(2) === 'allBlog' ? 'active' : '' }}">
+                    <a href="{{route('admin.view.all.blog')}}" class="menu-link">
+                        <div data-i18n="Without menu">Ongoing Projects</div>
+                    </a>
+                </li>
+                <li class="menu-item {{Request::segment(2) === 'add-new-blog-page' ? 'active' : ''}}">
+                    <a href="{{route('admin.create.new.blog')}}" class="menu-link">
+                        <div data-i18n="Without menu">Completed Projects</div>
+                    </a>
+                </li>
+            </ul> --}}
+        </li>
+
         <!-- Layouts -->
         {{-- <li class="menu-item {{ Request::segment(1) === 'blog' ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">

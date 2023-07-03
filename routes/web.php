@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Login\LoginController;
+use App\Http\Controllers\Projects\ProjectsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,10 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::group(['prefix' => 'dashboard'], function(){
         Route::get('view', [DashboardController::class, 'viewDashboard'])->name('admin.view.dashboard');
+    });
+
+    Route::group(['prefix' => 'projects'], function(){
+        Route::get('all-ongoing', [ProjectsController::class, 'allOngoingProjects'])->name('admin.get.ongoing.projects');
     });
 
     // Route::group(['prefix' => 'blog'], function(){

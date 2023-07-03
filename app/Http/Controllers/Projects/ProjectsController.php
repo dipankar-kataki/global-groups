@@ -10,4 +10,8 @@ class ProjectsController extends Controller
     public function allOngoingProjects(){
         return view('content.projects.ongoing.all-ongoing');
     }
+
+    public function addOngoingProjects(){
+        return view('content.projects.ongoing.create-project');
+    }
 }

@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::group(['prefix' => 'projects'], function(){
         Route::get('all-ongoing', [ProjectsController::class, 'allOngoingProjects'])->name('admin.get.ongoing.projects');
+        Route::get('add-ongoing', [ProjectsController::class, 'addOngoingProjects'])->name('admin.add.ongoing.projects');
     });
 
     // Route::group(['prefix' => 'blog'], function(){

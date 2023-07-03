@@ -12,7 +12,7 @@
     <meta name="description" content="Global Groups Admin Panel" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{asset('assets/img/logo/ekodus-logo-sm.png')}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('assets/img/logo/gg-min-logo.png')}}" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

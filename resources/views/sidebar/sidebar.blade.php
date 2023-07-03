@@ -29,18 +29,18 @@
                 <div data-i18n="Layouts">Projects</div>
             </a>
 
-            {{-- <ul class="menu-sub">
-                <li class="menu-item {{ Request::segment(2) === 'allBlog' ? 'active' : '' }}">
-                    <a href="{{route('admin.view.all.blog')}}" class="menu-link">
+            <ul class="menu-sub">
+                <li class="menu-item {{ Request::segment(2) === 'all-ongoing' ? 'active' : '' }}">
+                    <a href="{{route('admin.get.ongoing.projects')}}" class="menu-link">
                         <div data-i18n="Without menu">Ongoing Projects</div>
                     </a>
                 </li>
-                <li class="menu-item {{Request::segment(2) === 'add-new-blog-page' ? 'active' : ''}}">
+                {{-- <li class="menu-item {{Request::segment(2) === 'add-new-blog-page' ? 'active' : ''}}">
                     <a href="{{route('admin.create.new.blog')}}" class="menu-link">
                         <div data-i18n="Without menu">Completed Projects</div>
                     </a>
-                </li>
-            </ul> --}}
+                </li> --}}
+            </ul>
         </li>
 
         <!-- Layouts -->

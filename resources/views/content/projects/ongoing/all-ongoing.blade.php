@@ -21,9 +21,6 @@
             <div class="card-header">
                 <div class="d-flex flex-row justify-content-between">
                     <h4>Ongoing Projects</h4>
-                    <a href="{{route('admin.add.ongoing.projects')}}" type="button" class="btn btn-primary">
-                        <span class="tf-icons bx bx-plus"></span>&nbsp; Add Project
-                    </a>
                 </div>
             </div>
             <div class="card-body">

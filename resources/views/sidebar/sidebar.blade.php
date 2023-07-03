@@ -22,6 +22,12 @@
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
+        <li class="menu-item {{ Request::segment(1) === 'banner' ? 'active' : '' }} ">
+            <a href="{{route('admin.view.dashboard')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-image"></i>
+                <div data-i18n="Analytics">Home Banner</div>
+            </a>
+        </li>
 
         <li class="menu-item {{ Request::segment(1) === 'projects' ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -33,6 +39,11 @@
                 <li class="menu-item {{ Request::segment(2) === 'all-ongoing' ? 'active' : '' }}">
                     <a href="{{route('admin.get.ongoing.projects')}}" class="menu-link">
                         <div data-i18n="Without menu">Ongoing Projects</div>
+                    </a>
+                </li>
+                <li class="menu-item {{ Request::segment(2) === 'add-new' ? 'active' : '' }}">
+                    <a href="{{route('admin.add.new.projects')}}" class="menu-link">
+                        <div data-i18n="Without menu">Add New Projects</div>
                     </a>
                 </li>
                 {{-- <li class="menu-item {{Request::segment(2) === 'add-new-blog-page' ? 'active' : ''}}">

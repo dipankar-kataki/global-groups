@@ -52,7 +52,7 @@
     
 @endsection
 @section('custom-scripts')
-    {{-- <script>
+    <script>
         $('.changeStatus').on('click', function(){
         
             const id = $(this).data('id');
@@ -60,7 +60,7 @@
 
 
             $.ajax({
-                url:"{{route('admin.blog.change.status')}}",
+                url:"{{route('admin.update.banners.status')}}",
                 type:"POST",
                 data:{
                     id: id,
@@ -68,6 +68,8 @@
                     '_token': "{{csrf_token()}}"
                 },
                 success:function(data){
+
+                    console.log('Response ==>', data)
 
                     if(data.status === 1){
                         Swal.fire({
@@ -96,5 +98,5 @@
                 }
             })
         })
-    </script> --}}
+    </script>
 @endsection

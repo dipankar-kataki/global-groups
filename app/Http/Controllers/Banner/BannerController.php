@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 class BannerController extends Controller
 {
     public function viewBanners(){
-        $all_banners = HomeBanner::where('status', 1)->get();
+        $all_banners = HomeBanner::all();
         return view('content.home-banners.banners')->with(['all_banners' =>  $all_banners]);
     }
 
@@ -43,6 +43,19 @@ class BannerController extends Controller
                 }
                 
             }
+        }
+    }
+
+    public function updateStatus(Request $request){
+        try{
+            $id = decrypt($request->id);
+
+            HomeBanner::where('id', $id)->update([
+                'status' => $request->status
+            ]);
+            return response()->json(['message' => 'Great! Visibility Updated.', 'status' => 1]);
+        }catch(\Exception $e){
+            return response()->json(['message' => 'Oops! Something Went Wrong.', 'status' => 0]);
         }
     }
 }

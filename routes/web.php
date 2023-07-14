@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::group(['prefix' => 'home-banner'], function(){
         Route::get('all-banners', [BannerController::class, 'viewBanners'])->name('admin.view.banners');
         Route::match(['get', 'post'], 'add-new-banner', [BannerController::class, 'addNewBanner'])->name('admin.add.new.banner');
+        Route::post('update-status', [BannerController::class, 'updateStatus'])->name('admin.update.banners.status');
     });
 
     Route::group(['prefix' => 'projects'], function(){
